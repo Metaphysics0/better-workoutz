@@ -5,7 +5,7 @@ export const TimerContext = createContext<ITimerValue>({
   seconds: 0,
 });
 
-interface ITimerValue {
+export interface ITimerValue {
   minutes: number;
   seconds: number;
 }

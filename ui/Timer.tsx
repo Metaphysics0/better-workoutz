@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { TimerContext } from "../providers/currentTime";
+import { ITimerValue, TimerContext } from "../providers/currentTime";
 
 export default function Timer({
   setTimer,
+  timerValue,
 }: {
-  setTimer: React.Dispatch<React.SetStateAction<number>>;
+  setTimer: React.Dispatch<React.SetStateAction<ITimerValue>>;
+  timerValue: ITimerValue;
 }) {
   const value = useContext(TimerContext);
 
@@ -19,7 +21,7 @@ export default function Timer({
 
   return (
     <View>
-      <Text style={{ fontSize: 30 }}>{value.seconds + 1}</Text>
+      <Text style={{ fontSize: 30 }}>{JSON.stringify(timerValue)}</Text>
     </View>
   );
 }
